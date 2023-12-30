@@ -1,0 +1,26 @@
+spring:
+#    username: postgres
+
+#    password: omonov2006
+#    url: jdbc:postgresql://localhost:5432/educationtest
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+#    properties:
+#      hibernate:
+#        format_sql: true
+  sql:
+    init:
+      mode: always
+  servlet:
+    multipart:
+      enabled: true
+      max-request-size: 215MB
+      max-file-size: 215MB
+server:
+  port: 8088
+  error:
+    include-message: always
+#fast:
+#  url: http://localhost:8000/
