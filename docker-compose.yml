@@ -1,15 +1,5 @@
 version: '3'
 services:
-  postgres:
-    container_name: second-db-for-education
-    image: "postgres:15"
-    restart: always
-    ports:
-      - "5433:5433"
-    environment:
-      POSTGRES_DB: second_db
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: root
   python-app:
     container_name: python-scanner-excel
     build:
@@ -18,7 +8,6 @@ services:
       - "8010:8010"
     restart: always
 
-
   spring-app:
     container_name: spring-education-test
     build:
@@ -26,11 +15,3 @@ services:
     restart: always
     ports:
       - "8088:8088"
-    depends_on:
-      - postgres
-      - python-app
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/second_db
-      SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: root
-      fast.url: http://python-scanner-excel:8010/

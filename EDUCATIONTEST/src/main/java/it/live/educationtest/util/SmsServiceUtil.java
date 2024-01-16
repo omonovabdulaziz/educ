@@ -53,7 +53,7 @@ public class SmsServiceUtil {
             con.setDoOutput(true);
 
             OutputStream os = con.getOutputStream();
-            os.write(("email=jurabek99899@gmail.com&password=Ab8Yi44OBMd1K2xJJy0SzqitYK24IldkvRlXn89T").getBytes());
+            os.write(("").getBytes());
             os.flush();
             os.close();
 
