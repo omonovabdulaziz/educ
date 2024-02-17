@@ -16,4 +16,5 @@ public class GroupResponseDTO {
     private String name;
     private Boolean isValid;
     private Status status;
+    private Integer studentCount;
 }

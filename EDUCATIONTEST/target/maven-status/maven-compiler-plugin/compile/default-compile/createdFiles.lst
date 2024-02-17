@@ -50,6 +50,7 @@ it\live\educationtest\entity\EducationLocation.class
 it\live\educationtest\entity\enums\SystemRoleName.class
 it\live\educationtest\service\impl\UserServiceImpl.class
 it\live\educationtest\service\impl\StatusServiceImpl.class
+it\live\educationtest\payload\ContestFullDto.class
 it\live\educationtest\payload\QueAnsDataDTO.class
 it\live\educationtest\mapper\StatusMapper.class
 it\live\educationtest\service\impl\GroupServiceImpl.class
@@ -109,6 +110,7 @@ it\live\educationtest\service\QuestionService.class
 it\live\educationtest\exception\ForbiddenException.class
 it\live\educationtest\repository\FinishedProccessRepository.class
 it\live\educationtest\mapper\GroupMapper.class
+it\live\educationtest\payload\ContestFullDto$ContestFullDtoBuilder.class
 it\live\educationtest\service\impl\AnswerServiceImpl.class
 it\live\educationtest\payload\ApiResponse$ApiResponseBuilder.class
 it\live\educationtest\repository\GroupRepository.class

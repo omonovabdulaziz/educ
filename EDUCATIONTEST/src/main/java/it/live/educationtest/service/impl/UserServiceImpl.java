@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserService {
     public List<UserDTO> getRatingByGroupId(Long groupId) {
         User systemUser = SecurityConfiguration.getOwnSecurityInformation();
         if (systemUser.getSystemRoleName() == SystemRoleName.ROLE_USER)
-            return userRepository.findAllByGroupIdAndSystemRoleNameOrderByBallDesc(systemUser.getId(), SystemRoleName.ROLE_USER).stream().map(userMapper::toDTO).collect(Collectors.toList());
+            return userRepository.findAllByGroupIdAndSystemRoleNameOrderByBallDesc(systemUser.getGroup().getId(), SystemRoleName.ROLE_USER).stream().map(userMapper::toDTO).collect(Collectors.toList());
         return userRepository.findAllByGroupIdAndSystemRoleNameOrderByBallDesc(groupId, SystemRoleName.ROLE_USER).stream().map(userMapper::toDTO).collect(Collectors.toList());
     }
 }

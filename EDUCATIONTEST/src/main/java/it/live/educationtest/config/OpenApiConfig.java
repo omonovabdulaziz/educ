@@ -35,7 +35,7 @@ import lombok.Value;
                 ),
                 @Server(
                         description = "PROD ENV",
-                        url = "http://137.184.14.168:8088"
+                        url = ""
                 )
         },
         security = {

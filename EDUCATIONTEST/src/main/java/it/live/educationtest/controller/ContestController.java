@@ -4,6 +4,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import it.live.educationtest.entity.Contest;
 import it.live.educationtest.payload.ApiResponse;
 import it.live.educationtest.payload.ContestDTO;
+import it.live.educationtest.payload.ContestFullDto;
 import it.live.educationtest.service.ContestService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

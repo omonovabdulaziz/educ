@@ -20,7 +20,7 @@ public class GroupMapper {
     public Group toEntity(GroupDTO groupDTO) {
         return Group
                 .builder()
-                .teacher(userRepository.findByIdAndSystemRoleName(groupDTO.getTeacherId() , SystemRoleName.ROLE_TEACHER).orElseThrow(() -> new NotFoundException("Bunday teacher topilmadi")))
+                .teacher(userRepository.findByIdAndSystemRoleName(groupDTO.getTeacherId(), SystemRoleName.ROLE_TEACHER).orElseThrow(() -> new NotFoundException("Bunday teacher topilmadi")))
                 .name(groupDTO.getName())
                 .isValid(groupDTO.getIsValid())
                 .status(statusRepository.findById(groupDTO.getStatusId()).orElseThrow(() -> new NotFoundException("Bunday status mavjud")))
@@ -28,7 +28,7 @@ public class GroupMapper {
     }
 
     public Group toEntity(Group editGroup, GroupDTO groupDTO) {
-        editGroup.setTeacher(userRepository.findByIdAndSystemRoleName(groupDTO.getTeacherId() , SystemRoleName.ROLE_TEACHER).orElseThrow(() -> new NotFoundException("Bunday teacher topilmadi")));
+        editGroup.setTeacher(userRepository.findByIdAndSystemRoleName(groupDTO.getTeacherId(), SystemRoleName.ROLE_TEACHER).orElseThrow(() -> new NotFoundException("Bunday teacher topilmadi")));
         editGroup.setIsValid(groupDTO.getIsValid());
         editGroup.setName(groupDTO.getName());
         editGroup.setStatus(statusRepository.findById(groupDTO.getStatusId()).orElseThrow(() -> new NotFoundException("Bunday status topilmadi")));
@@ -40,6 +40,7 @@ public class GroupMapper {
                 .id(group.getId())
                 .name(group.getName())
                 .isValid(group.getIsValid())
+                .studentCount(userRepository.findAllByGroupIdAndSystemRoleName(group.getId(), SystemRoleName.ROLE_USER).size())
                 .status(null).build();
     }
 }
