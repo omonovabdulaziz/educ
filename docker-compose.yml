@@ -7,7 +7,16 @@ services:
     ports:
       - "8010:8010"
     restart: always
-
+  postgres:
+    container_name: first-db
+    image: "postgres:15"
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: educationtest
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: omonov2006
   spring-app:
     container_name: spring-education-test
     build:

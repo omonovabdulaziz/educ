@@ -15,7 +15,7 @@ public class EducationtestApplication {
 
     public static void main(String[] args) {
 //        SmsServiceUtil.setToken();
-//        SpringApplication.run(EducationtestApplication.class, args);
+        SpringApplication.run(EducationtestApplication.class, args);
     }
 
 }

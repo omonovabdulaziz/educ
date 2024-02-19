@@ -2,7 +2,7 @@ spring:
   datasource:
     username: postgres
     password: omonov2006
-    url: jdbc:postgresql://localhost:5432/educationtest
+    url: jdbc:postgresql://postgres:5432/educationtest
   sql:
     init:
       mode: always

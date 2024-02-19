@@ -20,12 +20,6 @@ import org.springframework.web.bind.annotation.*;
 public class AuthenticationController {
     private final AuthService authService;
 
-    @PostMapping("/register")
-    public ResponseEntity<ApiResponse> registerUser(@Valid @RequestBody RegisterDTO registerUserDTO) {
-        return authService.registerUser(registerUserDTO);
-    }
-
-
     @PostMapping("/login")
     public ResponseEntity<ApiResponse> loginUser(@Valid @RequestBody LoginDTO loginDTO) {
         return authService.loginUser(loginDTO);
